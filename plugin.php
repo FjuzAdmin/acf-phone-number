@@ -46,8 +46,8 @@ add_filter('after_setup_theme', new class
     protected function register()
     {
         $field = new PhoneNumberField(
-            plugin_dir_url(__FILE__) . $this->assetPath,
-            plugin_dir_path(__FILE__) . $this->assetPath
+            get_stylesheet_directory_uri() . '/includes/acf-phone-number/' . $this->assetPath,
+            get_template_directory() . '/includes/acf-phone-number/' . $this->assetPath
         );
 
         acf_register_field_type($field);
